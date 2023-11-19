@@ -1,4 +1,4 @@
-return function (Part : BasePart | Model, Multiplier : Vector3) : Part
+return function (Part : BasePart | Model, Multiplier : Vector3?) : Part
     local Size, Position
 
     if Part:IsA('BasePart') then
@@ -9,7 +9,7 @@ return function (Part : BasePart | Model, Multiplier : Vector3) : Part
     end
 
     local Hitbox = Instance.new('Part', Part)
-    Hitbox.Size = Size * Multiplier
+    Hitbox.Size = Size * (Multiplier or Vector3.new(1, 1, 1))
     Hitbox.Position = Position + Vector3.new(0, (Hitbox.Size.Y / 2) - 0.5, 0)
     Hitbox.Anchored = true
     Hitbox.CanCollide = false
