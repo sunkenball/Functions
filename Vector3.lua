@@ -1,5 +1,5 @@
 local _Vector3 = {}
-_Vector3.__index = Vector3
+_Vector3.__index = _Vector3
 
 function _Vector3.new(Default : number)
     local self = setmetatable({}, Vector3)
